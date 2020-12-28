@@ -1,0 +1,259 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "Admin and End User LogIns",
+    "children" : [ {
+      "name" : "Verify Common Menu Items and Admin Menu Items for Admin",
+      "uid" : "b87d2f56038be56b",
+      "parentUid" : "59c82946cb3c7ff10793709ea28c0c74",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609174907351,
+        "stop" : 1609174911502,
+        "duration" : 4151
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify Common Menu Items and Admin Menu Items for End User",
+      "uid" : "ea43ce93627ac795",
+      "parentUid" : "59c82946cb3c7ff10793709ea28c0c74",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609174911573,
+        "stop" : 1609174915426,
+        "duration" : 3853
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "59c82946cb3c7ff10793709ea28c0c74"
+  }, {
+    "name" : "GUI Navigation",
+    "children" : [ {
+      "name" : "Verify navigation to User Profile Page for Admin",
+      "uid" : "4c60123fa278394a",
+      "parentUid" : "5498499fea188a44195f1dfe7044f401",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609174915514,
+        "stop" : 1609174920883,
+        "duration" : 5369
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify navigation to Edit User Profile Page for End User",
+      "uid" : "5682e7aa0473922e",
+      "parentUid" : "5498499fea188a44195f1dfe7044f401",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609174920902,
+        "stop" : 1609174926238,
+        "duration" : 5336
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify navigation to Change Password Page for End User",
+      "uid" : "e02e42b39269052d",
+      "parentUid" : "5498499fea188a44195f1dfe7044f401",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609174926245,
+        "stop" : 1609174930327,
+        "duration" : 4082
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify navigation to Manage User and Create User Page for Admin",
+      "uid" : "dcac8c71a3acd9eb",
+      "parentUid" : "5498499fea188a44195f1dfe7044f401",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609174930333,
+        "stop" : 1609174936532,
+        "duration" : 6199
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "5498499fea188a44195f1dfe7044f401"
+  }, {
+    "name" : "User Profile",
+    "children" : [ {
+      "name" : "Verify Data on User Profile for Admin and End User",
+      "uid" : "d79d81a92b64aef9",
+      "parentUid" : "b857fe8c135147debc8f6e5aff65053c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609174951159,
+        "stop" : 1609174960419,
+        "duration" : 9260
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify end user can update user profile and view saved changes",
+      "uid" : "d48ce37c035ca1f7",
+      "parentUid" : "b857fe8c135147debc8f6e5aff65053c",
+      "status" : "failed",
+      "time" : {
+        "start" : 1609174960445,
+        "stop" : 1609174965117,
+        "duration" : 4672
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify end user can change password and can login with new password",
+      "uid" : "47844047d96f13a5",
+      "parentUid" : "b857fe8c135147debc8f6e5aff65053c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609174965175,
+        "stop" : 1609174971438,
+        "duration" : 6263
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify user can recover password via Forget your password link",
+      "uid" : "9cd5053b3850f555",
+      "parentUid" : "b857fe8c135147debc8f6e5aff65053c",
+      "status" : "failed",
+      "time" : {
+        "start" : 1609174971445,
+        "stop" : 1609174972923,
+        "duration" : 1478
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "b857fe8c135147debc8f6e5aff65053c"
+  }, {
+    "name" : "Manage Users",
+    "children" : [ {
+      "name" : "Verify data for all users listed on Manage Users Page against API",
+      "uid" : "666c70aa3f64541d",
+      "parentUid" : "e2e44a8ca93fcb77c5e606688f69f6f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609174972957,
+        "stop" : 1609174976305,
+        "duration" : 3348
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify admin can change the password for another user and that user is able to login",
+      "uid" : "ab2ac65994decd82",
+      "parentUid" : "e2e44a8ca93fcb77c5e606688f69f6f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609174976315,
+        "stop" : 1609174984399,
+        "duration" : 8084
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify admin can change the role to super user for another user",
+      "uid" : "7d904e07dc4cce61",
+      "parentUid" : "e2e44a8ca93fcb77c5e606688f69f6f5",
+      "status" : "failed",
+      "time" : {
+        "start" : 1609174984462,
+        "stop" : 1609174992370,
+        "duration" : 7908
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify admin can change the role to super user and update password, full name and email",
+      "uid" : "ca033d1c0c9e5b34",
+      "parentUid" : "e2e44a8ca93fcb77c5e606688f69f6f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609174992400,
+        "stop" : 1609175002908,
+        "duration" : 10508
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify admin can remove super user role for another user and login as that user to check",
+      "uid" : "d0b7efb1a7390d85",
+      "parentUid" : "e2e44a8ca93fcb77c5e606688f69f6f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609175003035,
+        "stop" : 1609175015046,
+        "duration" : 12011
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify admin can change end user status as inactive and user cannot login",
+      "uid" : "52528e4a80991f08",
+      "parentUid" : "e2e44a8ca93fcb77c5e606688f69f6f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609175015095,
+        "stop" : 1609175023987,
+        "duration" : 8892
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Verify admin can change end user status back to active and user cannot login",
+      "uid" : "6dbd21b1fd37c6a4",
+      "parentUid" : "e2e44a8ca93fcb77c5e606688f69f6f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609175024008,
+        "stop" : 1609175033167,
+        "duration" : 9159
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "e2e44a8ca93fcb77c5e606688f69f6f5"
+  }, {
+    "name" : "Create Users",
+    "children" : [ {
+      "name" : "Verify admin can create new end user and new user can log in",
+      "uid" : "be47de63ef38af74",
+      "parentUid" : "45a792ebb2d20bdad1c8cc037a10c1cb",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1609175033233,
+        "stop" : 1609175033233,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "45a792ebb2d20bdad1c8cc037a10c1cb"
+  } ],
+  "name" : "suites"
+}

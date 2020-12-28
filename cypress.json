@@ -1,0 +1,9 @@
+{
+  "baseUrl": "http://localhost",
+  "env": {
+        "allureResultsPath": "cypress/reports/allure-results",
+        "adminUser": "admin@tqqaproject.com",
+        "endUser": "enduser2@tqqaproject.com",
+        "password": "changethis"
+    }
+}

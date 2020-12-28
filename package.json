@@ -1,0 +1,25 @@
+{
+  "name": "cypress_e2e",
+  "version": "1.0.0",
+  "description": "e2e tests",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^6.2.0"
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^1.9.0",
+    "allure-commandline": "^2.13.0",
+    "pg": "^8.5.1"
+  },
+  "scripts": {
+    "clean:reports": "rm -rf cypress/reports && mkdir cypress/reports",
+    "pretest": "npm run clean:reports",
+    "api:scripts": "cypress run --env allure=true --spec 'cypress/integration/api/*' --headless --browser chrome",
+    "scripts": "cypress run --env allure=true --spec 'cypress/integration/e2e/*' --headless --browser chrome",
+    "posttest": "node_modules/allure-commandline/bin/allure generate cypress/reports/allure-results --clean -o cypress/reports/allure-report",
+    "test": "npm run clean:reports && npm run scripts || npm run posttest",
+    "api:test": "npm run clean:reports && npm run api:scripts || npm run posttest"
+  },
+  "author": "snair",
+  "license": "ISC"
+}

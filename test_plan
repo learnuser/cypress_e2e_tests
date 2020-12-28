@@ -1,0 +1,53 @@
+
+Admin/GUI Logins (e2e tests)
+Verify Common Menu Items and Admin Menu Items for Admin.
+Verify Common Menu Items for End User (No admin menu items).
+Verify user can request password via forget password link.
+
+GUI Navigation (e2e tests)
+Verify all possible navigation to User Profile Page for Admin/EndUser.
+Verify all possible navigation to Edit User Profile Page for End User/Admin.
+Verify navigation to Change Password Page for End User/Admin.
+Verify navigation to Manage User and Create User Page for Admin.
+
+User Profile (e2e tests)
+Verify Data on User Profile for Admin and End User.
+Verify end user/admin can update user profile and view saved changes.
+Verify end user/admin can change password and can login with new password.
+
+Manage Users (e2e tests)
+Verify data for all users listed on Manage Users Page (Test against API response).
+Verify admin can change the password for another user and that user is able to login.
+Verify admin can change the role to super user (or revoke it) and login as that user to verify.
+Verify admin can change the role to super user and update password, full name and email. (multiple fields)
+Verify admin can change end user status as inactive and user cannot login.
+Verify admin can change end user status as active and user can now login.
+
+Create Users (e2e tests)
+Verify admin can create new end user and new user can log in / verify.
+Verify admin can create new admin user and new user can log in / verify.
+Verify admin cannot create two users with same email id.
+
+API Tests (Integration tests)
+Verify access token - success, incorrect email/password, missing field.
+Validate access token - valid and invalid.
+Verify password recovery request.
+Verify reset password request.
+Verify get all users - valid and invalid access token.
+Verify get current user - valid and invalid access token.
+Verify get user data by Id.
+Verify user update for current user - valid and invalid access token.
+Verify user update for fields - full name, email, super user/ active status and password (different combinations)
+followed by validation using getUserDataById.
+Verify user update by non admin - not enough priviliges.
+Create user - admin, non-admin, existing user.
+
+Bugs
+password-recovery - api
+reset-password - api
+current user update - api
+user update by admin when password field is omitted - api
+password encryption on API
+/api/v1/users/ called on GUI when user clicks on Create User or Edit User Button ??
+
+

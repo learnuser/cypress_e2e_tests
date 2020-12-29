@@ -6,7 +6,7 @@ import * as manageUsersPage from '../pageObjects/manageUsersPage.js'
 import * as api from './api.js'
 
 export function verifyUserProfile(){
-    goToUserProfile();
+    goToUserProfile('dashboard');
     cy.allure().step('Verify Full Name and Email on User Profile Page (against API)')
     cy.wait('@token').then((token)=>{
             let accessToken = token.response.body.access_token
@@ -110,6 +110,7 @@ export function verifyAllUsersData(actual={}){
 
 function editUserHelper(editUserPage, data){
     cy.get('[aria-label="E-mail"]').should('exist')
+    cy.wait(500)
     if ('password' in data){
         editUserPage.updatePassword(data.password)
     }

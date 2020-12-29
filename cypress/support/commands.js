@@ -28,8 +28,8 @@ Cypress.Commands.add('logIn', (userName, password, valid=true) =>{
 })
 
 Cypress.Commands.add('logout', () =>{
-    mainPage.getMenuActivator().click()
-    mainPage.getInactiveMenuItem('Logout').click()
+    mainPage.getMenuActivator().should('be.visible').click()
+    mainPage.getInactiveMenuItem('Logout').should('be.visible').click()
 })
 
 Cypress.Commands.add('getButton', (label) =>{

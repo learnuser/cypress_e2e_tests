@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^1.9.0",
+    "@vue/cli": "^4.5.9",
     "allure-commandline": "^2.13.0",
     "pg": "^8.5.1"
   },

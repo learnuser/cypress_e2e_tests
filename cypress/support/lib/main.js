@@ -45,7 +45,7 @@ export function goToUserProfile(path = 'menu'){
         cy.getButton('View Profile').click()
     } else if (path.toLowerCase()=='leftnav') {
         mainPage.getLeftNavButton().click()
-        mainPage.getMenuItem('Profile').click()
+        mainPage.getMenuItem('Profile').should('be.visible').click()
     } else { //default is from menu
         mainPage.getMenuActivator().click()
         mainPage.getInactiveMenuItem('Profile').should('be.visible').click()
@@ -77,7 +77,7 @@ export function goToChangePassword(path='leftnav'){
         cy.getButton('Change Password').click()
     } else {
         mainPage.getLeftNavButton().click()
-        mainPage.getMenuItem('Change Password').click()
+        mainPage.getMenuItem('Change Password').should('be.visible').click()
     }
     cy.allure().step('Verify user is on Set Password Page')
     cy.verifyPageTitle('Set Password')

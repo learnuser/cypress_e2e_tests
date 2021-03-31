@@ -10,16 +10,27 @@
     "@shelex/cypress-allure-plugin": "^1.9.0",
     "@vue/cli": "^4.5.9",
     "allure-commandline": "^2.13.0",
+    "cypress-multi-reporters": "^1.4.0",
+    "mocha": "^8.3.2",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0",
     "pg": "^8.5.1"
   },
   "scripts": {
-    "clean:reports": "rm -rf cypress/reports && mkdir cypress/reports",
+    "clean:reports": "rm -rf cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports",
     "pretest": "npm run clean:reports",
     "api:scripts": "cypress run --env allure=true --spec 'cypress/integration/api/*' --headless --browser chrome",
     "scripts": "cypress run --env allure=true --spec 'cypress/integration/e2e/*' --headless --browser chrome",
     "posttest": "node_modules/allure-commandline/bin/allure generate cypress/reports/allure-results --clean -o cypress/reports/allure-report",
     "test": "npm run clean:reports && npm run scripts || npm run posttest",
-    "api:test": "npm run clean:reports && npm run api:scripts || npm run posttest"
+    "api:test": "npm run clean:reports && npm run api:scripts || npm run posttest",
+    "mocha-report:copyScreenshots": "cp -r cypress/screenshots cypress/reports/mochareports/screenshots",
+    "mocha-combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
+    "mocha-generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "mocha-posttest": "npm run mocha-report:copyScreenshots && npm run mocha-combine-reports && npm run mocha-generate-report",
+    "mocha-scripts": "cypress run --spec 'cypress/integration/**/*'",
+    "mocha-api-test": "npm run pretest && npm run mocha-scripts || npm run mocha-posttest"
   },
   "author": "snair",
   "license": "ISC"

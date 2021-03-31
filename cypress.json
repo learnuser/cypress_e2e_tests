@@ -5,5 +5,17 @@
         "adminUser": "admin@tqqaproject.com",
         "endUser": "enduser2@tqqaproject.com",
         "password": "changethis"
-    }
+    },
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+      "reporterEnabled": "mochawesome",
+      "mochawesomeReporterOptions": {
+          "reportDir": "cypress/reports/mocha",
+          "code": true,
+          "quiet": true,
+          "overwrite": false,
+          "html": false,
+          "json": true
+      }
+  }
 }

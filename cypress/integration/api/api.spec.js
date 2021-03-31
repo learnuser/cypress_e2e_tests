@@ -7,11 +7,15 @@ describe('API Integration Tests', () => {
         let user = Cypress.env('adminUser')
         let password = Cypress.env('password')
         cy.allure().step('Success Scenario')
+        cy.addContext('Success Scenario');
+        cy.wrap(null).then(()=>{
+            expect(1).to.eq(2)
+        })
         api.getAccessToken(user, password)
 
         cy.allure().step('Incorrect Password')
+        cy.addContext('Incorrect Password');
         api.getAccessToken(user, 'incorrect', 400)
-
         cy.allure().step('Missing field - Password')
         api.getAccessToken(user,undefined, 422)
     })
@@ -20,6 +24,7 @@ describe('API Integration Tests', () => {
         let user = Cypress.env('adminUser')
         let password = Cypress.env('password')
         cy.allure().step('Get access token')
+        cy.addContext('Get access token')
         api.getAccessToken(user, password).then((res)=>{
             let testOptions = {method:'POST', failOnStatusCode: false,
                                 url:'api/v1/login/test-token', auth: {bearer: res.body['access_token']}}

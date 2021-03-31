@@ -10,6 +10,11 @@
 //
 
 import * as mainPage from './pageObjects/mainPage.js'
+import addContext from "mochawesome/addContext"
+
+Cypress.Commands.add("addContext", (context) => {
+  cy.once("test:after:run", (test) => addContext({ test }, context))
+})
 
 //selectors
 const userField = 'input[name="login"]';

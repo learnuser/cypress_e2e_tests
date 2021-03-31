@@ -16,6 +16,33 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import '@shelex/cypress-allure-plugin';
+import addContext from 'mochawesome/addContext'
+
+Cypress.on('test:after:run', (test, runnable) => {
+    if (test.state === 'failed') {
+      let item = runnable
+      const nameParts = [runnable.title]
+  
+      // Iterate through all parents and grab the titles
+      while (item.parent) {
+        nameParts.unshift(item.parent.title)
+        item = item.parent
+      }
+  
+      const MAX_SPEC_NAME_LENGTH = 220;
+      const fullTestName = nameParts
+              .filter(Boolean)
+              .join(' -- ')           // this is how cypress joins the test title fragments
+              .slice(0, MAX_SPEC_NAME_LENGTH)
+              .replace(/\//g, '')
+
+      const imageUrl = `screenshots/${
+        Cypress.spec.name
+      }/${fullTestName} (failed).png`
+  
+      addContext({ test }, imageUrl)
+    }
+  })
 
 
 // Alternatively you can use CommonJS syntax:

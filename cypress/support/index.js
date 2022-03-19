@@ -18,6 +18,10 @@ import './commands'
 import '@shelex/cypress-allure-plugin';
 import addContext from 'mochawesome/addContext'
 
+Cypress.on("uncaught:exception", (err) => {
+  return false;
+})
+
 Cypress.on('test:after:run', (test, runnable) => {
     if (test.state === 'failed') {
       let item = runnable

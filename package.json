@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "e2e tests",
   "main": "index.js",
-  "dependencies": {
-    "cypress": "^6.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^1.9.0",
     "@vue/cli": "^4.5.9",
     "allure-commandline": "^2.13.0",
+    "cypress": "^9.5.2",
     "cypress-multi-reporters": "^1.4.0",
     "mocha": "^8.3.2",
     "mochawesome": "^6.2.2",
@@ -25,11 +24,11 @@
     "posttest": "node_modules/allure-commandline/bin/allure generate cypress/reports/allure-results --clean -o cypress/reports/allure-report",
     "test": "npm run clean:reports && npm run scripts || npm run posttest",
     "api:test": "npm run clean:reports && npm run api:scripts || npm run posttest",
-    "mocha-report:copyScreenshots": "cp -r cypress/screenshots cypress/reports/mochareports/screenshots",
-    "mocha-combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
-    "mocha-generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "mocha-report:copyScreenshots": "cp -r cypress/screenshots cypress/reports/mocha/screenshots",
+    "mocha-combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mocha/report.json",
+    "mocha-generate-report": "marge cypress/reports/mocha/report.json -f report -o cypress/reports/mocha",
     "mocha-posttest": "npm run mocha-report:copyScreenshots && npm run mocha-combine-reports && npm run mocha-generate-report",
-    "mocha-scripts": "cypress run --spec 'cypress/integration/**/*'",
+    "mocha-scripts": "cypress run --spec 'cypress/integration/api/*'",
     "mocha-api-test": "npm run pretest && npm run mocha-scripts || npm run mocha-posttest"
   },
   "author": "snair",

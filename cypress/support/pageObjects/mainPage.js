@@ -19,6 +19,7 @@ function getMenuActivator(){
 }
 
 function getPageTitle(){
+    cy.wait(500);
     return cy.get('[class="headline primary--text"]').then((el)=>{
         return el.text()
     })

@@ -8,9 +8,6 @@ describe('API Integration Tests', () => {
         let password = Cypress.env('password')
         cy.allure().step('Success Scenario')
         cy.addContext('Success Scenario');
-        cy.wrap(null).then(()=>{
-            expect(1).to.eq(2)
-        })
         api.getAccessToken(user, password)
 
         cy.allure().step('Incorrect Password')
